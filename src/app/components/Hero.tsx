@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const videos = [
   '/videos/ribbon.mp4',
@@ -10,14 +10,22 @@ const videos = [
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleEnded = () => {
     setCurrent((prev) => (prev + 1) % videos.length);
   };
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {});
+    }
+  }, [current]);
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <video
+        ref={videoRef}
         key={current}
         className="absolute top-0 left-0 w-full h-full object-cover opacity-50 pointer-events-none"
         autoPlay
