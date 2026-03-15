@@ -65,7 +65,7 @@ export default function Navbar() {
       {/* Dropdown */}
       {menuOpen && (
         <div style={{ background: '#581c87', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-          <a href="#about" onClick={() => setMenuOpen(false)} style={{ color: 'white', textDecoration: 'none', fontWeight: 600 }}>ABOUT</a>
+          <a href="#about" onClick={() => setMenuOpen(false)} style={{ color: 'white', textDecoration: 'none', fontWeight: 600 }}>ABOT</a>
           <a href="#research" onClick={() => setMenuOpen(false)} style={{ color: 'white', textDecoration: 'none', fontWeight: 600 }}>RESEARCH</a>
           <a href="#mission" onClick={() => setMenuOpen(false)} style={{ color: 'white', textDecoration: 'none', fontWeight: 600 }}>OUR MISSION</a>
           <a href="#contact" onClick={() => setMenuOpen(false)} style={{ color: 'white', textDecoration: 'none', fontWeight: 600 }}>CONTACT</a>
