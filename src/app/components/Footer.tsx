@@ -47,7 +47,6 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li><a href="https://cancer.ca" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition">Canadian Cancer Society</a></li>
               <li><a href="#research" className="hover:text-purple-400 transition">About Pancreatic Cancer</a></li>
-              <li><a href="mailto:purplehope.ca@gmail.com" className="hover:text-purple-400 transition">purplehope.ca@gmail.com</a></li>
             </ul>
           </div>
 
