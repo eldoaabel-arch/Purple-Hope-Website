@@ -66,19 +66,20 @@ export default function Hero() {
         className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
       />
 
-      {/* Video — layers on top when ready */}
-      <video
-        ref={videoRef}
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-50 pointer-events-none"
-        style={{ display: videoReady ? 'block' : 'none' }}
-        loop={false}
-        muted
-        playsInline
-        controls={false}
-        onEnded={handleEnded}
-      >
-        <source src={videos[0]} type="video/mp4" />
-      </video>
+      {/* Video — only rendered when ready */}
+      {videoReady && (
+        <video
+          ref={videoRef}
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-50 pointer-events-none"
+          loop={false}
+          muted
+          playsInline
+          controls={false}
+          onEnded={handleEnded}
+        >
+          <source src={videos[0]} type="video/mp4" />
+        </video>
+      )}
 
       <div className="relative z-10 flex flex-col justify-end h-full text-white px-6 md:px-10 pb-16">
         <h1
