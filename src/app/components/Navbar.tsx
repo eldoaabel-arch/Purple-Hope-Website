@@ -53,8 +53,9 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Hamburger - always visible for now */}
+        {/* Hamburger */}
         <button
+          className="hamburger-btn"
           onClick={() => setMenuOpen(!menuOpen)}
           style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer', padding: 0, flexShrink: 0, fontSize: '1.75rem', lineHeight: 1 }}
         >
@@ -64,8 +65,8 @@ export default function Navbar() {
 
       {/* Dropdown */}
       {menuOpen && (
-        <div style={{ background: '#581c87', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-          <a href="#about" onClick={() => setMenuOpen(false)} style={{ color: 'white', textDecoration: 'none', fontWeight: 600 }}>ABOT</a>
+        <div style={{ background: 'linear-gradient(to right, #581c87, #9333ea, #60a5fa)', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+          <a href="#about" onClick={() => setMenuOpen(false)} style={{ color: 'white', textDecoration: 'none', fontWeight: 600 }}>ABOUT</a>
           <a href="#research" onClick={() => setMenuOpen(false)} style={{ color: 'white', textDecoration: 'none', fontWeight: 600 }}>RESEARCH</a>
           <a href="#mission" onClick={() => setMenuOpen(false)} style={{ color: 'white', textDecoration: 'none', fontWeight: 600 }}>OUR MISSION</a>
           <a href="#contact" onClick={() => setMenuOpen(false)} style={{ color: 'white', textDecoration: 'none', fontWeight: 600 }}>CONTACT</a>

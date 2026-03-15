@@ -21,20 +21,20 @@ button {
   cursor: pointer;
 }
 
-.mobile-only {
-  display: flex;
-}
-
 .desktop-only {
   display: none;
 }
 
-@media (min-width: 768px) {
-  .mobile-only {
-    display: none;
-  }
+.hamburger-btn {
+  display: block;
+}
 
+@media (min-width: 768px) {
   .desktop-only {
     display: flex;
+  }
+
+  .hamburger-btn {
+    display: none;
   }
 }
