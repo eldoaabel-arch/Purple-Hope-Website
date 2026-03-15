@@ -43,8 +43,13 @@ export default function Hero() {
   }, [isVisible]);
 
   useEffect(() => {
-    if (videoRef.current && isVisible) {
-      videoRef.current.play().catch(() => {});
+    if (videoRef.current) {
+      videoRef.current.src = videos[current];
+      videoRef.current.load();
+      if (isVisible) {
+        videoRef.current.play().catch(() => {});
+        setVideoReady(true);
+      }
     }
   }, [current]);
 
@@ -63,7 +68,6 @@ export default function Hero() {
       {/* Video — layers on top when ready */}
       <video
         ref={videoRef}
-        key={current}
         className="absolute top-0 left-0 w-full h-full object-cover opacity-50 pointer-events-none"
         style={{ display: videoReady ? 'block' : 'none' }}
         loop={false}
@@ -71,7 +75,7 @@ export default function Hero() {
         playsInline
         onEnded={handleEnded}
       >
-        <source src={videos[current]} type="video/mp4" />
+        <source src={videos[0]} type="video/mp4" />
       </video>
 
       <div className="relative z-10 flex flex-col justify-end h-full text-white px-6 md:px-10 pb-16">
