@@ -19,7 +19,7 @@ export default function Hero() {
     <section className="relative h-screen w-full overflow-hidden">
       <video
         key={current}
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-50 pointer-events-none"
         autoPlay
         loop={false}
         muted
