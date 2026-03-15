@@ -23,7 +23,7 @@ export default function Hero() {
   }, [current]);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-[60vh] md:h-screen w-full overflow-hidden">
       <video
         ref={videoRef}
         key={current}
