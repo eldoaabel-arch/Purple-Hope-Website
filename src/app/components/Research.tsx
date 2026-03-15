@@ -1,37 +1,38 @@
 export default function Research() {
   return (
-    <section id="research" className="bg-zinc-800 text-white py-24 px-10 scroll-mt-20">
+    <section id="research" className="bg-zinc-800 text-white py-24 px-6 md:px-10 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
 
         <div className="mb-16">
           <h2
-            className="text-6xl leading-tight mb-6"
+            className="text-4xl md:text-6xl leading-tight mb-6"
             style={{ fontFamily: 'var(--font-bebas)' }}
           >
             Why Pancreatic Cancer?
           </h2>
           <div className="w-16 h-1 bg-purple-500 mb-6" />
-          <p className="text-gray-300 text-lg max-w-2xl leading-relaxed">
+          <p className="text-gray-300 text-base md:text-lg max-w-2xl leading-relaxed">
             Pancreatic cancer is one of the most devastating diagnoses a person can receive. Yet it remains one of the least talked about and least funded cancers in Canada. Here is why that needs to change.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-          <div className="bg-zinc-900 p-8 rounded-lg">
-            <p className="text-5xl font-black text-purple-400 mb-2">11%</p>
-            <p className="text-gray-300 text-sm leading-relaxed">5-year survival rate — one of the lowest of any cancer</p>
+        {/* Stats grid — 1 col on mobile, 2 on small, 4 on desktop */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+          <div className="bg-zinc-900 p-4 md:p-8 rounded-lg">
+            <p className="text-4xl md:text-5xl font-black text-purple-400 mb-2">11%</p>
+            <p className="text-gray-300 text-xs md:text-sm leading-relaxed">5-year survival rate — one of the lowest of any cancer</p>
           </div>
-          <div className="bg-zinc-900 p-8 rounded-lg">
-            <p className="text-5xl font-black text-purple-400 mb-2">7,100+</p>
-            <p className="text-gray-300 text-sm leading-relaxed">Canadians diagnosed with pancreatic cancer every year</p>
+          <div className="bg-zinc-900 p-4 md:p-8 rounded-lg">
+            <p className="text-4xl md:text-5xl font-black text-purple-400 mb-2">7,100+</p>
+            <p className="text-gray-300 text-xs md:text-sm leading-relaxed">Canadians diagnosed with pancreatic cancer every year</p>
           </div>
-          <div className="bg-zinc-900 p-8 rounded-lg">
-            <p className="text-5xl font-black text-purple-400 mb-2">80%</p>
-            <p className="text-gray-300 text-sm leading-relaxed">of cases are diagnosed at a late stage when treatment is least effective</p>
+          <div className="bg-zinc-900 p-4 md:p-8 rounded-lg">
+            <p className="text-4xl md:text-5xl font-black text-purple-400 mb-2">80%</p>
+            <p className="text-gray-300 text-xs md:text-sm leading-relaxed">of cases are diagnosed at a late stage when treatment is least effective</p>
           </div>
-          <div className="bg-zinc-900 p-8 rounded-lg">
-            <p className="text-5xl font-black text-purple-400 mb-2">#4</p>
-            <p className="text-gray-300 text-sm leading-relaxed">leading cause of cancer death in Canada despite relatively lower incidence</p>
+          <div className="bg-zinc-900 p-4 md:p-8 rounded-lg">
+            <p className="text-4xl md:text-5xl font-black text-purple-400 mb-2">#4</p>
+            <p className="text-gray-300 text-xs md:text-sm leading-relaxed">leading cause of cancer death in Canada despite relatively lower incidence</p>
           </div>
         </div>
 
@@ -59,12 +60,19 @@ export default function Research() {
           </div>
         </div>
 
-        <div className="bg-zinc-900 rounded-lg p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-zinc-900 rounded-lg p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-3xl mb-2" style={{ fontFamily: 'var(--font-bebas)' }}>Ready to make a difference?</h3>
             <p className="text-gray-400 text-sm">Your donation goes directly to the Canadian Cancer Society's pancreatic cancer research programs.</p>
           </div>
-          <a href="https://fundraisemyway.cancer.ca/teams/10421/donate" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-purple-600 to-blue-400 hover:opacity-90 text-white px-8 py-4 text-lg font-bold uppercase rounded-full tracking-wide whitespace-nowrap cursor-pointer">Donate Now</a>
+          
+            <a href="https://fundraisemyway.cancer.ca/teams/10421/donate"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-purple-600 to-blue-400 hover:opacity-90 text-white px-8 py-4 text-lg font-bold uppercase rounded-full tracking-wide whitespace-nowrap cursor-pointer"
+          >
+            Donate Now
+          </a>
         </div>
 
       </div>
