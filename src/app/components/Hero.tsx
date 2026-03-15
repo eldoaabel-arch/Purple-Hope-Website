@@ -19,7 +19,6 @@ export default function Hero() {
     setCurrent((prev) => (prev + 1) % videos.length);
   };
 
-  // Intersection Observer — watch when hero enters/exits viewport
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -33,7 +32,6 @@ export default function Hero() {
     return () => observer.disconnect();
   }, []);
 
-  // Play video when visible, pause when not
   useEffect(() => {
     if (!videoRef.current) return;
     if (isVisible) {
@@ -44,7 +42,6 @@ export default function Hero() {
     }
   }, [isVisible]);
 
-  // Play on video change
   useEffect(() => {
     if (videoRef.current && isVisible) {
       videoRef.current.play().catch(() => {});
@@ -56,16 +53,14 @@ export default function Hero() {
       ref={sectionRef}
       className="relative h-[60vh] md:h-screen w-full overflow-hidden"
     >
-      {/* Fallback image — shows until video is ready */}
-      {!videoReady && (
-        <img
-          src="/images/fallback.jpg"
-          alt="Purple Hope"
-          className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
-        />
-      )}
+      {/* Fallback image — always shown */}
+      <img
+        src="/images/fallback.jpg"
+        alt="Purple Hope"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
+      />
 
-      {/* Video */}
+      {/* Video — layers on top when ready */}
       <video
         ref={videoRef}
         key={current}
