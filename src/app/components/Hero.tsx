@@ -62,6 +62,7 @@ export default function Hero() {
       <img
         src="/images/fallback.jpg"
         alt="Purple Hope"
+        aria-hidden="true"
         className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
       />
 
@@ -73,6 +74,7 @@ export default function Hero() {
         loop={false}
         muted
         playsInline
+        controls={false}
         onEnded={handleEnded}
       >
         <source src={videos[0]} type="video/mp4" />
