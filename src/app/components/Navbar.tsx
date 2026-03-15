@@ -78,7 +78,7 @@ export default function Navbar() {
           flexShrink: 0,
         }}
       >
-        DONATE NOW
+        GIVE TODAY
       </a>
 
       {/* Mobile dropdown */}
