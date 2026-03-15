@@ -18,7 +18,26 @@ export default function Navbar() {
     }}>
       <div style={{ padding: '0.6rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
 
-        <span style={{ fontFamily: 'var(--font-cormorant)', color: 'white', fontSize: '1.25rem', fontWeight: 600, lineHeight: 1.2, flexShrink: 0 }}>
+        {/* Mobile left — hamburger */}
+        <button
+          className="hamburger-btn"
+          onClick={() => setMenuOpen(!menuOpen)}
+          style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer', padding: 0, flexShrink: 0, fontSize: '1.75rem', lineHeight: 1 }}
+        >
+          {menuOpen ? '✕' : '☰'}
+        </button>
+
+        {/* Logo */}
+        <span style={{ fontFamily: 'var(--font-cormorant)', color: 'white', fontSize: '1.25rem', fontWeight: 600, lineHeight: 1.2, flexShrink: 0 }}
+          className="hamburger-btn"
+        >
+          Purple Hope <br /> Campaign
+        </span>
+
+        {/* Desktop logo — only on desktop */}
+        <span style={{ fontFamily: 'var(--font-cormorant)', color: 'white', fontSize: '1.25rem', fontWeight: 600, lineHeight: 1.2, flexShrink: 0 }}
+          className="desktop-only"
+        >
           Purple Hope <br /> Campaign
         </span>
 
@@ -30,9 +49,9 @@ export default function Navbar() {
           <a href="#contact" style={{ color: 'white', textDecoration: 'none' }}>CONTACT</a>
         </div>
 
-        {/* Desktop right */}
-        <div className="desktop-only" style={{ alignItems: 'center', gap: '1.5rem' }}>
-          <div style={{ display: 'flex', gap: '1rem' }}>
+        {/* Right side — donate + socials on desktop, just donate on mobile */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div className="desktop-only" style={{ gap: '1rem' }}>
             <a href="https://tiktok.com/@purplehope.ca" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>
               <FaTiktok size={20} />
             </a>
@@ -47,20 +66,11 @@ export default function Navbar() {
             <a href="https://fundraisemyway.cancer.ca/teams/10421/donate"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ border: '2px solid white', color: 'white', padding: '0.5rem 1.5rem', borderRadius: '9999px', fontWeight: 700, textDecoration: 'none' }}
+            style={{ border: '2px solid white', color: 'white', padding: '0.4rem 1rem', borderRadius: '9999px', fontWeight: 700, textDecoration: 'none', fontSize: '0.85rem', whiteSpace: 'nowrap' }}
           >
             DONATE NOW
           </a>
         </div>
-
-        {/* Hamburger */}
-        <button
-          className="hamburger-btn"
-          onClick={() => setMenuOpen(!menuOpen)}
-          style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer', padding: 0, flexShrink: 0, fontSize: '1.75rem', lineHeight: 1 }}
-        >
-          {menuOpen ? '✕' : '☰'}
-        </button>
       </div>
 
       {/* Dropdown */}
@@ -81,14 +91,6 @@ export default function Navbar() {
               <SiGmail size={20} />
             </a>
           </div>
-          
-            <a href="https://fundraisemyway.cancer.ca/teams/10421/donate"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ border: '2px solid white', color: 'white', padding: '0.5rem 1.5rem', borderRadius: '9999px', fontWeight: 700, textDecoration: 'none', textAlign: 'center' }}
-          >
-            DONATE NOW
-          </a>
         </div>
       )}
     </nav>
