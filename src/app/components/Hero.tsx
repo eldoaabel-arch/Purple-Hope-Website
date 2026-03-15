@@ -10,25 +10,67 @@ const videos = [
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const handleEnded = () => {
     setCurrent((prev) => (prev + 1) % videos.length);
   };
 
+  // Intersection Observer — watch when hero enters/exits viewport
   useEffect(() => {
-    if (videoRef.current) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.3 }
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  // Play video when visible, pause when not
+  useEffect(() => {
+    if (!videoRef.current) return;
+    if (isVisible) {
+      videoRef.current.play().catch(() => {});
+      setVideoReady(true);
+    } else {
+      videoRef.current.pause();
+    }
+  }, [isVisible]);
+
+  // Play on video change
+  useEffect(() => {
+    if (videoRef.current && isVisible) {
       videoRef.current.play().catch(() => {});
     }
   }, [current]);
 
   return (
-    <section className="relative h-[60vh] md:h-screen w-full overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative h-[60vh] md:h-screen w-full overflow-hidden"
+    >
+      {/* Fallback image — shows until video is ready */}
+      {!videoReady && (
+        <img
+          src="/images/fallback.jpg"
+          alt="Purple Hope"
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
+        />
+      )}
+
+      {/* Video */}
       <video
         ref={videoRef}
         key={current}
         className="absolute top-0 left-0 w-full h-full object-cover opacity-50 pointer-events-none"
-        autoPlay
+        style={{ display: videoReady ? 'block' : 'none' }}
         loop={false}
         muted
         playsInline
