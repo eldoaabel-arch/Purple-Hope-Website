@@ -28,17 +28,17 @@ export default function Hero() {
         <source src={videos[current]} type="video/mp4" />
       </video>
 
-      <div className="relative z-10 flex flex-col justify-end h-full text-white px-10 pb-16">
+      <div className="relative z-10 flex flex-col justify-end h-full text-white px-6 md:px-10 pb-16">
         <h1
-          className="text-[12rem] leading-none uppercase tracking-tight drop-shadow-lg"
-          style={{ fontFamily: 'var(--font-bebas)' }}
+          style={{ fontFamily: 'var(--font-bebas)', lineHeight: 1, textTransform: 'uppercase', letterSpacing: '-0.02em' }}
+          className="drop-shadow-lg text-[5rem] md:text-[12rem]"
         >
           LIGHT THE WAY.
         </h1>
-        <p className="text-2xl font-bold uppercase mb-6 max-w-lg tracking-wide">
+        <p className="text-lg md:text-2xl font-bold uppercase mb-6 max-w-lg tracking-wide">
           Pancreatic cancer can't wait. Neither can we.
         </p>
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap">
           
             <a href="https://fundraisemyway.cancer.ca/teams/10421/donate"
             target="_blank"
