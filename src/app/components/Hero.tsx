@@ -23,6 +23,7 @@ export default function Hero() {
         autoPlay
         loop={false}
         muted
+        playsInline
         onEnded={handleEnded}
       >
         <source src={videos[current]} type="video/mp4" />
