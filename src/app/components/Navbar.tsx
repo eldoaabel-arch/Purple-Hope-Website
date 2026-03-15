@@ -16,7 +16,7 @@ export default function Navbar() {
       zIndex: 50,
       background: 'linear-gradient(to right, #581c87, #9333ea, #60a5fa)'
     }}>
-      <div style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div style={{ padding: '0.6rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
 
         <span style={{ fontFamily: 'var(--font-cormorant)', color: 'white', fontSize: '1.25rem', fontWeight: 600, lineHeight: 1.2, flexShrink: 0 }}>
           Purple Hope <br /> Campaign
