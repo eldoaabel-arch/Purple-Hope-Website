@@ -10,8 +10,6 @@ const videos = [
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const [videoReady, setVideoReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -20,36 +18,10 @@ export default function Hero() {
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.3 }
-    );
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!videoRef.current) return;
-    if (isVisible) {
-      videoRef.current.play().catch(() => {});
-      setVideoReady(true);
-    } else {
-      videoRef.current.pause();
-    }
-  }, [isVisible]);
-
-  useEffect(() => {
     if (videoRef.current) {
       videoRef.current.src = videos[current];
       videoRef.current.load();
-      if (isVisible) {
-        videoRef.current.play().catch(() => {});
-        setVideoReady(true);
-      }
+      videoRef.current.play().catch(() => {});
     }
   }, [current]);
 
@@ -58,28 +30,17 @@ export default function Hero() {
       ref={sectionRef}
       className="relative h-[60vh] md:h-screen w-full overflow-hidden"
     >
-      {/* Fallback image — always shown */}
-      <img
-        src="/images/fallback.jpg"
-        alt="Purple Hope"
-        aria-hidden="true"
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
-      />
-
-      {/* Video — only rendered when ready */}
-      {videoReady && (
-        <video
-          ref={videoRef}
-          className="absolute top-0 left-0 w-full h-full object-cover opacity-50 pointer-events-none"
-          loop={false}
-          muted
-          playsInline
-          controls={false}
-          onEnded={handleEnded}
-        >
-          <source src={videos[0]} type="video/mp4" />
-        </video>
-      )}
+      <video
+        ref={videoRef}
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-50 pointer-events-none"
+        loop={false}
+        muted
+        playsInline
+        autoPlay
+        onEnded={handleEnded}
+      >
+        <source src={videos[0]} type="video/mp4" />
+      </video>
 
       <div className="relative z-10 flex flex-col justify-end h-full text-white px-6 md:px-10 pb-16">
         <h1
