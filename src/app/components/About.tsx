@@ -67,7 +67,7 @@ export default function About() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {[
               { name: 'Ajil', role: 'Campaign Coordinator', photo: '/images/team/placeholder.jpg' },
-              { name: 'Aabel', role: 'Web Developer & Campaign Registrar', photo: '/images/team/placeholder.jpg' },
+              { name: 'Aabel', role: 'Web Developer & Campaign Registrar', photo: '/images/team/aabel.png' },
               { name: 'Zac', role: 'Digital Marketing & Social Media', photo: '/images/team/placeholder.jpg' },
               { name: 'Noel', role: 'Graphic Designer & Branding', photo: '/images/team/placeholder.jpg' },
               { name: 'Kevin', role: 'Accounting & Bookkeeping', photo: '/images/team/placeholder.jpg' },
