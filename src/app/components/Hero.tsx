@@ -37,6 +37,7 @@ export default function Hero() {
         muted
         playsInline
         autoPlay
+        poster="/images/fallback.jpg"
         onEnded={handleEnded}
       >
         <source src={videos[0]} type="video/mp4" />
