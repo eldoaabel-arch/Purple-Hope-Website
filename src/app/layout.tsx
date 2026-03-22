@@ -22,7 +22,21 @@ const cormorantGaramond = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: "Purple Hope",
-  description: "Pancreatic cancer research nonprofit",
+  description: "A student-led fundraising campaign supporting pancreatic cancer research through the Canadian Cancer Society.",
+  openGraph: {
+    title: "Purple Hope",
+    description: "A student-led fundraising campaign supporting pancreatic cancer research through the Canadian Cancer Society.",
+    url: "https://purplehope.ca",
+    images: [
+      {
+        url: "https://purplehope.ca/images/fallback.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Purple Hope Campaign",
+      }
+    ],
+    siteName: "Purple Hope",
+  },
 };
 
 export default function RootLayout({
