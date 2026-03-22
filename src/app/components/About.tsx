@@ -68,7 +68,7 @@ export default function About() {
             {[
               { name: 'Ajil', role: 'Campaign Coordinator', photo: '/images/team/ajil.png' },
               { name: 'Aabel', role: 'Web Developer & Campaign Registrar', photo: '/images/team/aabel.png' },
-              { name: 'Zac', role: 'Digital Marketing & Social Media', photo: '/images/team/placeholder.jpg' },
+              { name: 'Zac', role: 'Digital Marketing & Social Media', photo: '/images/placeholder.jpg' },
               { name: 'Noel', role: 'Graphic Designer & Branding', photo: '/images/team/noel.png' },
               { name: 'Kevin', role: 'Accounting & Bookkeeping', photo: '/images/team/kevin.png' },
             ].map(({ name, role, photo }) => (
