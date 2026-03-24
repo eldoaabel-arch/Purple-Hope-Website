@@ -37,6 +37,10 @@ export const metadata: Metadata = {
     ],
     siteName: "Purple Hope",
   },
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
