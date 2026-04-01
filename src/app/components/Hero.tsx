@@ -10,6 +10,7 @@ const videos = [
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
+  const [visible, setVisible] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -18,12 +19,23 @@ export default function Hero() {
   };
 
   useEffect(() => {
+    const timer = setTimeout(() => setVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
     if (videoRef.current) {
       videoRef.current.src = videos[current];
       videoRef.current.load();
       videoRef.current.play().catch(() => {});
     }
   }, [current]);
+
+  const fadeUp = (delay: number): React.CSSProperties => ({
+    opacity: visible ? 0.85 : 0,
+    transform: visible ? 'translateY(0)' : 'translateY(24px)',
+    transition: `opacity 0.7s ease ${delay}s, transform 0.7s ease ${delay}s`,
+  });
 
   return (
     <section
@@ -45,20 +57,21 @@ export default function Hero() {
 
       <div className="relative z-10 flex flex-col justify-end h-full text-white px-6 md:px-10 pb-16">
         <h1
-          style={{ fontFamily: 'var(--font-bebas)', lineHeight: 1, textTransform: 'uppercase', letterSpacing: '-0.02em' }}
+          style={{ fontFamily: 'var(--font-bebas)', lineHeight: 1, textTransform: 'uppercase', letterSpacing: '-0.02em', ...fadeUp(0.1) }}
           className="drop-shadow-lg text-[5rem] md:text-[12rem]"
         >
           LIGHT THE WAY.
         </h1>
-        <p className="text-lg md:text-2xl font-bold uppercase mb-6 max-w-lg tracking-wide">
+        <p style={fadeUp(0.3)} className="text-lg md:text-2xl font-bold uppercase mb-6 max-w-lg tracking-wide">
           Pancreatic cancer can't wait. Neither can we.
         </p>
-        <div className="flex gap-4 flex-wrap">
+        <div style={fadeUp(0.5)} className="flex gap-4 flex-wrap">
           
             <a href="https://fundraisemyway.cancer.ca/teams/10421/donate"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gradient-to-r from-purple-600 to-blue-400 hover:opacity-90 text-white px-8 py-4 text-lg font-bold uppercase rounded-full tracking-wide cursor-pointer"
+            style={{ boxShadow: '0 0 20px rgba(168, 85, 247, 0.7), 0 0 40px rgba(168, 85, 247, 0.4)' }}
           >
             Donate
           </a>
