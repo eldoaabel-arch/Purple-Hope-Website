@@ -20,13 +20,18 @@ export default function Navbar() {
         borderBottom: '1px solid rgba(255,255,255,0.1)',
         display: 'flex',
         alignItems: 'stretch',
+        height: '53px',
       }}>
-        <div style={{ padding: '0.6rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flex: 1 }}>
+        <div style={{ padding: '0 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flex: 1 }}>
 
           {/* Logo */}
-          <span style={{ fontFamily: 'var(--font-cormorant)', color: 'white', fontSize: '1.25rem', fontWeight: 600, lineHeight: 1.2, flexShrink: 0 }}>
-            Purple Hope <br /> Campaign
-          </span>
+          <a href="#" style={{ flexShrink: 0, lineHeight: 0 }}>
+            <img
+              src="/images/logo.png"
+              alt="Purple Hope"
+              style={{ height: '60px', width: 'auto', objectFit: 'contain', transform: 'scaleX(1.2)', cursor: 'pointer' }}
+            />
+          </a>
 
           {/* Desktop nav */}
           <div className="desktop-only" style={{ gap: '2rem', fontWeight: 600, letterSpacing: '0.05em' }}>
@@ -108,7 +113,7 @@ export default function Navbar() {
         </a>
       </nav>
 
-      {/* Mobile dropdown — smooth slide animation */}
+      {/* Mobile dropdown */}
       <div style={{
         position: 'fixed',
         top: '53px',

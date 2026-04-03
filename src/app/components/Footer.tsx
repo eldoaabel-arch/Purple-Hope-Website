@@ -9,12 +9,11 @@ export default function Footer() {
 
         {/* Logo + description */}
         <div className="md:col-span-1">
-          <span
-            className="text-white text-3xl font-semibold leading-tight"
-            style={{ fontFamily: 'var(--font-cormorant)' }}
-          >
-            Purple Hope
-          </span>
+          <img
+            src="/images/logo.png"
+            alt="Purple Hope"
+            style={{ height: '200px', width: 'auto', objectFit: 'contain', transform: 'scaleX(1.15)', marginBottom: '0.75rem' }}
+          />
           <p className="text-gray-400 text-sm mt-3 max-w-xs">
             A student-led fundraising campaign supporting pancreatic cancer research through the Canadian Cancer Society.
           </p>
