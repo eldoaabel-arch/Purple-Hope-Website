@@ -166,57 +166,115 @@ export default function Navbar() {
       </header>
 
       {/* Mobile overlay */}
-      <div
-        className={`fixed inset-0 z-40 md:hidden transition-all duration-500 ${
-          menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+<div className="fixed inset-0 z-40 md:hidden pointer-events-none">
+
+  {/* BACKDROP LAYER (handles blur + dim) */}
+  <div
+    className={`absolute inset-0 bg-purple-950/80 backdrop-blur-xl transition-opacity duration-500 ${
+      menuOpen ? 'opacity-100' : 'opacity-0'
+    }`}
+  />
+
+  {/* GLOW EFFECTS (kept separate, no opacity conflict) */}
+  <div
+    className={`absolute -top-32 -left-32 w-96 h-96 bg-purple-700/20 rounded-full blur-3xl transition-opacity duration-500 ${
+      menuOpen ? 'opacity-100' : 'opacity-0'
+    }`}
+  />
+  <div
+    className={`absolute -bottom-32 -right-32 w-96 h-96 bg-blue-900/20 rounded-full blur-3xl transition-opacity duration-500 ${
+      menuOpen ? 'opacity-100' : 'opacity-0'
+    }`}
+  />
+
+  {/* CONTENT LAYER */}
+  <nav
+    className={`relative z-10 flex flex-col items-center justify-center h-full gap-2 transition-opacity duration-500 ${
+      menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+    }`}
+  >
+    <div
+      className={`mb-8 text-center transition-all duration-500 delay-100 ${
+        menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+      }`}
+    >
+      <p className="text-white/20 text-xs uppercase tracking-[0.4em] font-semibold">
+        Purple Hope
+      </p>
+    </div>
+
+    {NAV_LINKS.map((link, i) => (
+      <a
+        key={link.href}
+        href={link.href}
+        onClick={(e) => {
+          e.preventDefault();
+          handleNavClick(link.href);
+        }}
+        className={`relative text-5xl font-bold font-serif text-white/80 hover:text-white transition-all duration-500 group ${
+          menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
         }`}
+        style={{
+          transitionDelay: menuOpen ? `${150 + i * 70}ms` : '0ms',
+        }}
       >
-        <div className="absolute inset-0 bg-purple-950/80 backdrop-blur-xl" />
-        <div className="absolute -top-32 -left-32 w-96 h-96 bg-purple-700/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-900/20 rounded-full blur-3xl pointer-events-none" />
+        <span className="absolute -bottom-1 left-0 h-[3px] w-0 bg-purple-500 rounded-full transition-all duration-300 group-hover:w-full" />
+        {link.label}
+      </a>
+    ))}
 
-        <nav className="relative z-10 flex flex-col items-center justify-center h-full gap-2">
-          <div className={`mb-8 text-center transition-all duration-500 delay-100 ${menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            <p className="text-white/20 text-xs uppercase tracking-[0.4em] font-semibold">Purple Hope</p>
-          </div>
+    <div
+      className={`flex items-center gap-5 mt-8 transition-all duration-500 ${
+        menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+      }`}
+      style={{
+        transitionDelay: menuOpen
+          ? `${150 + NAV_LINKS.length * 70}ms`
+          : '0ms',
+      }}
+    >
+      <a
+        href="https://tiktok.com/@purplehope.ca"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white/60 hover:text-white transition-colors duration-200"
+      >
+        <FaTiktok size={22} />
+      </a>
 
-          {NAV_LINKS.map((link, i) => (
-            
-              <a key={link.href}
-              href={link.href}
-              onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-              className={`relative text-5xl font-bold font-serif text-white/80 hover:text-white transition-all duration-500 group ${
-                menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
-              style={{ transitionDelay: menuOpen ? `${150 + i * 70}ms` : '0ms' }}
-            >
-              <span className="absolute -bottom-1 left-0 h-[3px] w-0 bg-purple-500 rounded-full transition-all duration-300 group-hover:w-full" />
-              {link.label}
-            </a>
-          ))}
+      <a
+        href="https://instagram.com/purplehope.ca"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white/60 hover:text-white transition-colors duration-200"
+      >
+        <FaInstagram size={22} />
+      </a>
 
-          <div
-            className={`flex items-center gap-5 mt-8 transition-all duration-500 ${menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-            style={{ transitionDelay: menuOpen ? `${150 + NAV_LINKS.length * 70}ms` : '0ms' }}
-          >
-            <a href="https://tiktok.com/@purplehope.ca" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors duration-200"><FaTiktok size={22} /></a>
-            <a href="https://instagram.com/purplehope.ca" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors duration-200"><FaInstagram size={22} /></a>
-            <a href="mailto:purplehope.ca@gmail.com" className="text-white/60 hover:text-white transition-colors duration-200"><SiGmail size={22} /></a>
-          </div>
+      <a
+        href="mailto:purplehope.ca@gmail.com"
+        className="text-white/60 hover:text-white transition-colors duration-200"
+      >
+        <SiGmail size={22} />
+      </a>
+    </div>
 
-          
-            <a href="https://fundraisemyway.cancer.ca/teams/10421/donate"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`mt-6 px-10 py-4 bg-purple-600 hover:bg-purple-700 text-white font-bold text-lg rounded-full shadow-2xl shadow-purple-900/60 transition-all duration-500 hover:scale-105 ${
-              menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-            }`}
-            style={{ transitionDelay: menuOpen ? `${150 + (NAV_LINKS.length + 1) * 70}ms` : '0ms' }}
-          >
-            Give Today
-          </a>
-        </nav>
-      </div>
-    </>
+    <a
+      href="https://fundraisemyway.cancer.ca/teams/10421/donate"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`mt-6 px-10 py-4 bg-purple-600 hover:bg-purple-700 text-white font-bold text-lg rounded-full shadow-2xl shadow-purple-900/60 transition-all duration-500 hover:scale-105 ${
+        menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+      }`}
+      style={{
+        transitionDelay: menuOpen
+          ? `${150 + (NAV_LINKS.length + 1) * 70}ms`
+          : '0ms',
+      }}
+    >
+      Give Today
+    </a>
+  </nav>
+</div></>
   );
 }
