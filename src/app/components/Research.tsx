@@ -53,7 +53,7 @@ export default function Research() {
           {[
             { title: 'The Detection Problem', body: 'The pancreas is located deep within the abdomen, making tumours nearly impossible to detect early. There is currently no standard screening test for pancreatic cancer. Most patients have no symptoms until the cancer has already spread, which is why so many cases are caught too late for surgery or curative treatment.' },
             { title: 'The Funding Gap', body: 'Despite being the fourth leading cause of cancer death in Canada, pancreatic cancer receives a disproportionately small share of cancer research funding compared to cancers like breast or prostate cancer. This means fewer clinical trials, fewer treatment breakthroughs, and fewer options for patients and their families.' },
-            { title: 'How Your Donation Helps', body: "Every dollar raised through Purple Hope goes directly to the Canadian Cancer Society, one of Canada's most trusted and transparent charitable organizations. Your donation funds research into earlier detection methods, new treatments, and improved care for patients and families affected by pancreatic cancer across Canada." },
+            { title: 'How Your Donation Helps', body: 'Every dollar raised through Purple Hope goes directly to Wellspring Cancer Support London, supporting pancreatic cancer patients and their families right here in our community. Your donation funds programs, resources, and care for those who need it most.' },
           ].map(({ title, body }, i) => (
             <div key={title} style={fadeUp(0.15 * i)}>
               <h3 className="text-2xl mb-3" style={{ fontFamily: 'var(--font-bebas)' }}>{title}</h3>
@@ -66,16 +66,11 @@ export default function Research() {
         <div style={fadeUp(0.2)} className="bg-zinc-800 rounded-lg p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-3xl mb-2" style={{ fontFamily: 'var(--font-bebas)' }}>Ready to make a difference?</h3>
-            <p className="text-gray-400 text-sm">Your donation goes directly to the Canadian Cancer Society's pancreatic cancer research programs.</p>
+            <p className="text-gray-400 text-sm">We are setting up donations through Wellspring Cancer Support London. Check back soon!</p>
           </div>
-          
-            <a href="https://fundraisemyway.cancer.ca/teams/10421/donate"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gradient-to-r from-purple-600 to-blue-400 hover:opacity-90 text-white px-8 py-4 text-lg font-bold uppercase rounded-full tracking-wide whitespace-nowrap cursor-pointer"
-          >
-            Donate Now
-          </a>
+          <span className="bg-gradient-to-r from-purple-600 to-blue-400 text-white px-8 py-4 text-lg font-bold uppercase rounded-full tracking-wide whitespace-nowrap opacity-50 cursor-not-allowed select-none">
+            Donations Coming Soon
+          </span>
         </div>
 
       </div>

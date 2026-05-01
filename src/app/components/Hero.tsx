@@ -38,10 +38,7 @@ export default function Hero() {
   });
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative h-[60vh] md:h-screen w-full overflow-hidden"
-    >
+    <section ref={sectionRef} className="relative h-[60vh] md:h-screen w-full overflow-hidden">
       <video
         ref={videoRef}
         className="absolute top-0 left-0 w-full h-full object-cover opacity-50 pointer-events-none"
@@ -65,18 +62,13 @@ export default function Hero() {
         <p style={fadeUp(0.3)} className="text-lg md:text-2xl font-bold uppercase mb-6 max-w-lg tracking-wide">
           Pancreatic cancer can't wait. Neither can we.
         </p>
-        <div style={fadeUp(0.5)} className="flex gap-4 flex-wrap">
-          
-            <a href="https://fundraisemyway.cancer.ca/teams/10421/donate"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gradient-to-r from-purple-600 to-blue-400 hover:opacity-90 text-white px-8 py-4 text-lg font-bold uppercase rounded-full tracking-wide cursor-pointer"
-            style={{ boxShadow: '0 0 20px rgba(168, 85, 247, 0.7), 0 0 40px rgba(168, 85, 247, 0.4)' }}
+        <div style={fadeUp(0.5)} className="flex gap-4 flex-wrap items-center">
+          <span
+            className="bg-gradient-to-r from-purple-600 to-blue-400 text-white px-8 py-4 text-lg font-bold uppercase rounded-full tracking-wide opacity-50 cursor-not-allowed select-none"
           >
-            Donate
-          </a>
-          
-            <a href="#mission"
+            Donations Coming Soon
+          </span>
+          <a href="#mission"
             className="bg-white hover:bg-gray-100 text-black px-8 py-4 text-lg font-bold uppercase rounded-full tracking-wide cursor-pointer"
           >
             Our Mission
