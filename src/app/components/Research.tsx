@@ -22,7 +22,7 @@ export default function Research() {
   });
 
   return (
-    <section id="research" className="bg-zinc-800 text-white py-24 px-6 md:px-10 scroll-mt-20">
+    <section id="research" className="bg-zinc-900 text-white py-24 px-6 md:px-10 scroll-mt-20">
       <div className="max-w-7xl mx-auto" ref={sectionRef}>
 
         <div className="mb-16">
@@ -42,7 +42,7 @@ export default function Research() {
             { stat: '80%', desc: 'of cases are diagnosed at a late stage when treatment is least effective' },
             { stat: '#4', desc: 'leading cause of cancer death in Canada despite relatively lower incidence' },
           ].map(({ stat, desc }, i) => (
-            <div key={stat} style={fadeUp(0.1 * i)} className="bg-zinc-900 p-4 md:p-8 rounded-lg">
+            <div key={stat} style={fadeUp(0.1 * i)} className="bg-zinc-800 p-4 md:p-8 rounded-lg">
               <p className="text-4xl md:text-5xl font-black text-purple-400 mb-2">{stat}</p>
               <p className="text-gray-300 text-xs md:text-sm leading-relaxed">{desc}</p>
             </div>
@@ -63,7 +63,7 @@ export default function Research() {
           ))}
         </div>
 
-        <div style={fadeUp(0.2)} className="bg-zinc-900 rounded-lg p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div style={fadeUp(0.2)} className="bg-zinc-800 rounded-lg p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-3xl mb-2" style={{ fontFamily: 'var(--font-bebas)' }}>Ready to make a difference?</h3>
             <p className="text-gray-400 text-sm">Your donation goes directly to the Canadian Cancer Society's pancreatic cancer research programs.</p>

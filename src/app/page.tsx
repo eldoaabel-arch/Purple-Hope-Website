@@ -5,6 +5,7 @@ import Research from './components/Research';
 import Mission from './components/Mission';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Poster from './components/Poster';
 
 export default function Home() {
   return (
