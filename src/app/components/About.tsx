@@ -71,10 +71,10 @@ export default function About() {
           <div style={fadeUp(0.3)} className="w-10 h-1 bg-purple-500 mb-8" />
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {[
-              { name: 'Ajil', role: 'Campaign Coordinator', photo: '/images/team/ajil.png' },
+              { name: 'Ajil', role: 'Campaign Coordinator', photo: '/images/team/placeholder.jpg' },
               { name: 'Aabel', role: 'Web Developer & Campaign Registrar', photo: '/images/team/aabel.png' },
               { name: 'Zac', role: 'Digital Marketing & Social Media', photo: '/images/placeholder.jpg' },
-              { name: 'Noel', role: 'Graphic Designer & Branding', photo: '/images/team/noel.png' },
+              { name: 'Noel', role: 'Graphic Designer & Branding', photo: '/images/team/placeholder.pg' },
               { name: 'Kevin', role: 'Accounting & Bookkeeping', photo: '/images/team/kevin.png' },
             ].map(({ name, role, photo }, i) => (
               <div key={name} style={fadeUp(0.1 * i)} className="flex flex-col items-center text-center">
