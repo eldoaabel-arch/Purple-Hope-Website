@@ -74,7 +74,7 @@ export default function About() {
               { name: 'Ajil', role: 'Campaign Coordinator', photo: '/images/placeholder.jpg' },
               { name: 'Aabel', role: 'Web Developer & Campaign Registrar', photo: '/images/team/aabel.png' },
               { name: 'Zac', role: 'Digital Marketing & Social Media', photo: '/images/placeholder.jpg' },
-              { name: 'Noel', role: 'Graphic Designer & Branding', photo: '/images/placeholder.pg' },
+              { name: 'Noel', role: 'Graphic Designer & Branding', photo: '/images/placeholder.jpg' },
               { name: 'Kevin', role: 'Accounting & Bookkeeping', photo: '/images/team/kevin.png' },
             ].map(({ name, role, photo }, i) => (
               <div key={name} style={fadeUp(0.1 * i)} className="flex flex-col items-center text-center">
