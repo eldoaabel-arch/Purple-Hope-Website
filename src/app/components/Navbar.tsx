@@ -11,6 +11,8 @@ const NAV_LINKS = [
   { label: 'Contact', href: '#contact' },
 ];
 
+const DONATE_URL = 'https://give.wellspring.ca/purple-hope';
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -116,10 +118,15 @@ export default function Navbar() {
               <a href="mailto:purplehope.ca@gmail.com" className="text-white/60 hover:text-white transition-colors duration-200"><SiGmail size={18} /></a>
             </div>
 
-            {/* CTA — greyed out */}
-            <span className="ml-3 px-5 py-2 bg-purple-600/40 text-white/40 text-sm font-bold rounded-full cursor-not-allowed select-none">
-              Donations Coming Soon
-            </span>
+            {/* CTA — live */}
+            
+              <a href={DONATE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-3 px-5 py-2 bg-gradient-to-r from-purple-600 to-blue-400 hover:opacity-90 text-white text-sm font-bold rounded-full transition-opacity duration-200"
+            >
+              Donate Now
+            </a>
           </nav>
 
           {/* Hamburger */}
@@ -160,12 +167,15 @@ export default function Navbar() {
             <a href="mailto:purplehope.ca@gmail.com" className="text-white/60 hover:text-white transition-colors duration-200"><SiGmail size={22} /></a>
           </div>
 
-          <span
-            className={`mt-6 px-10 py-4 bg-purple-600/40 text-white/40 font-bold text-lg rounded-full cursor-not-allowed select-none transition-all duration-500 ${menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          
+            <a href={DONATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`mt-6 px-10 py-4 bg-gradient-to-r from-purple-600 to-blue-400 hover:opacity-90 text-white font-bold text-lg rounded-full transition-all duration-500 ${menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
             style={{ transitionDelay: menuOpen ? `${150 + (NAV_LINKS.length + 1) * 70}ms` : '0ms' }}
           >
-            Donations Coming Soon
-          </span>
+            Donate Now
+          </a>
         </nav>
       </div>
     </>

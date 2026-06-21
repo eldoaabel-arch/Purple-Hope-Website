@@ -1,6 +1,8 @@
 import { FaTiktok, FaInstagram } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
 
+const DONATE_URL = 'https://give.wellspring.ca/purple-hope';
+
 export default function Footer() {
   return (
     <footer className="bg-black text-white">
@@ -33,7 +35,11 @@ export default function Footer() {
           <div>
             <h4 className="text-gray-400 uppercase tracking-widest text-xs font-bold mb-4">Get Involved</h4>
             <ul className="space-y-3 text-sm">
-              <li><span className="text-gray-600 cursor-not-allowed select-none">Donations Coming Soon</span></li>
+              <li>
+                <a href={DONATE_URL} target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition">
+                  Donate Now
+                </a>
+              </li>
               <li><a href="#contact" className="hover:text-purple-400 transition">Contact Us</a></li>
             </ul>
           </div>

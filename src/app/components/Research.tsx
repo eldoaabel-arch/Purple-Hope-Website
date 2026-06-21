@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react';
 
+const DONATE_URL = 'https://give.wellspring.ca/purple-hope';
+
 export default function Research() {
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -66,11 +68,16 @@ export default function Research() {
         <div style={fadeUp(0.2)} className="bg-zinc-800 rounded-lg p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-3xl mb-2" style={{ fontFamily: 'var(--font-bebas)' }}>Ready to make a difference?</h3>
-            <p className="text-gray-400 text-sm">We are setting up donations through Wellspring Cancer Support London. Check back soon!</p>
+            <p className="text-gray-400 text-sm">Donations go directly to Wellspring Cancer Support London in support of pancreatic cancer patients and research.</p>
           </div>
-          <span className="bg-gradient-to-r from-purple-600 to-blue-400 text-white px-8 py-4 text-lg font-bold uppercase rounded-full tracking-wide whitespace-nowrap opacity-50 cursor-not-allowed select-none">
-            Donations Coming Soon
-          </span>
+          
+            <a href={DONATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-purple-600 to-blue-400 hover:opacity-90 text-white px-8 py-4 text-lg font-bold uppercase rounded-full tracking-wide whitespace-nowrap transition-opacity duration-200"
+          >
+            Donate Now
+          </a>
         </div>
 
       </div>

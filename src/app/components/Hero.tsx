@@ -8,6 +8,8 @@ const videos = [
   '/videos/lab.mp4',
 ];
 
+const DONATE_URL = 'https://give.wellspring.ca/purple-hope';
+
 export default function Hero() {
   const [current, setCurrent] = useState(0);
   const [visible, setVisible] = useState(false);
@@ -63,11 +65,14 @@ export default function Hero() {
           Pancreatic cancer can't wait. Neither can we.
         </p>
         <div style={fadeUp(0.5)} className="flex gap-4 flex-wrap items-center">
-          <span
-            className="bg-gradient-to-r from-purple-600 to-blue-400 text-white px-8 py-4 text-lg font-bold uppercase rounded-full tracking-wide opacity-50 cursor-not-allowed select-none"
+          
+            <a href={DONATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-purple-600 to-blue-400 hover:opacity-90 text-white px-8 py-4 text-lg font-bold uppercase rounded-full tracking-wide transition-opacity duration-200"
           >
-            Donations Coming Soon
-          </span>
+            Donate Now
+          </a>
           <a href="#mission"
             className="bg-white hover:bg-gray-100 text-black px-8 py-4 text-lg font-bold uppercase rounded-full tracking-wide cursor-pointer"
           >
