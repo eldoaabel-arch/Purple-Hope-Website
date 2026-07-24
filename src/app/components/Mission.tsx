@@ -4,7 +4,7 @@ const DONATE_URL = 'https://give.wellspring.ca/purple-hope';
 
 export default function Mission() {
   const goal = 10000;
-  const raised = 0;
+  const raised = 50;
   const percentage = Math.min((raised / goal) * 100, 100);
   const donors = 0;
 
