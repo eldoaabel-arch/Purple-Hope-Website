@@ -39,7 +39,7 @@ export default function Research() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
           {[
-            { stat: '11%', desc: '5-year survival rate — one of the lowest of any cancer' },
+            { stat: '11%', desc: '5-year survival rate, one of the lowest of any cancer' },
             { stat: '7,100+', desc: 'Canadians diagnosed with pancreatic cancer every year' },
             { stat: '80%', desc: 'of cases are diagnosed at a late stage when treatment is least effective' },
             { stat: '#4', desc: 'leading cause of cancer death in Canada despite relatively lower incidence' },
@@ -54,7 +54,7 @@ export default function Research() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
           {[
             { title: 'The Detection Problem', body: 'The pancreas is located deep within the abdomen, making tumours nearly impossible to detect early. There is currently no standard screening test for pancreatic cancer. Most patients have no symptoms until the cancer has already spread, which is why so many cases are caught too late for surgery or curative treatment.' },
-            { title: 'The Funding Gap', body: 'Despite being the fourth leading cause of cancer death in Canada, pancreatic cancer receives a disproportionately small share of cancer research funding compared to cancers like breast or prostate cancer. This means fewer clinical trials, fewer treatment breakthroughs, and fewer options for patients and their families.' },
+            { title: 'The Funding Gap', body: 'Despite being the fourth leading cause of cancer death in Canada, pancreatic cancer receives far less attention and funding than cancers like breast or prostate cancer. That means fewer support programs, fewer resources, and fewer options for patients and their families.' },
             { title: 'How Your Donation Helps', body: 'Every dollar raised through Purple Hope goes directly to Wellspring Cancer Support London, supporting pancreatic cancer patients and their families right here in our community. Your donation funds programs, resources, and care for those who need it most.' },
           ].map(({ title, body }, i) => (
             <div key={title} style={fadeUp(0.15 * i)}>
@@ -68,7 +68,7 @@ export default function Research() {
         <div style={fadeUp(0.2)} className="bg-zinc-800 rounded-lg p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-3xl mb-2" style={{ fontFamily: 'var(--font-bebas)' }}>Ready to make a difference?</h3>
-            <p className="text-gray-400 text-sm">Donations go directly to Wellspring Cancer Support London in support of pancreatic cancer patients and research.</p>
+            <p className="text-gray-400 text-sm">Donations go directly to Wellspring Cancer Support London in support of pancreatic cancer patients.</p>
           </div>
           
             <a href={DONATE_URL}

@@ -18,7 +18,7 @@ export default function Mission() {
           </h2>
           <div className="w-16 h-1 bg-purple-500 mb-6" />
           <p className="text-gray-300 text-base md:text-lg max-w-2xl leading-relaxed">
-            Every dollar we raise goes directly to Wellspring Cancer Support London to fund pancreatic cancer research. Help us hit our goal.
+            Every dollar we raise goes directly to Wellspring Cancer Support London to support pancreatic cancer patients and their families. Help us hit our goal.
           </p>
         </div>
 
@@ -54,7 +54,7 @@ export default function Mission() {
           <div>
             <h3 className="text-3xl mb-2" style={{ fontFamily: 'var(--font-bebas)' }}>Ready to make a difference?</h3>
             <p className="text-gray-400 text-sm max-w-lg">
-              Donations go directly to Wellspring Cancer Support London in support of pancreatic cancer patients and research.
+              Donations go directly to Wellspring Cancer Support London in support of pancreatic cancer patients.
             </p>
           </div>
           

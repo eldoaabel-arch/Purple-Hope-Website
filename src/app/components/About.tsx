@@ -43,7 +43,7 @@ export default function About() {
               Pancreatic cancer is one of the deadliest and most underfunded cancers in Canada. It took someone we loved. It has taken too many others. We refuse to stand by and do nothing.
             </p>
             <p className="text-gray-300 leading-relaxed mb-4">
-              As students in high school, we partnered with Wellspring Cancer Support London to launch Purple Hope — a fundraising campaign dedicated to pancreatic cancer research and support. Every dollar raised goes directly to Wellspring's programs and services.
+              As students in high school, we partnered with Wellspring Cancer Support London to launch Purple Hope, a fundraising campaign dedicated to supporting pancreatic cancer patients and their families. Every dollar raised goes directly to Wellspring's programs and services.
             </p>
             <p className="text-gray-300 leading-relaxed">
               We may be young, but we know that change starts somewhere. This is where ours starts.
@@ -57,11 +57,11 @@ export default function About() {
             </div>
             <div className="border-l-4 border-purple-500 pl-6">
               <p className="text-6xl font-black text-white">#1</p>
-              <p className="text-gray-400 mt-1">most lethal major cancer — the lowest survival rate of any common cancer</p>
+              <p className="text-gray-400 mt-1">most lethal major cancer, with the lowest survival rate of any common cancer</p>
             </div>
             <div className="border-l-4 border-purple-500 pl-6">
               <p className="text-6xl font-black text-white">$10,000</p>
-              <p className="text-gray-400 mt-1">our fundraising goal — every dollar goes directly to Wellspring Cancer Support London</p>
+              <p className="text-gray-400 mt-1">our fundraising goal. Every dollar goes directly to Wellspring Cancer Support London</p>
             </div>
           </div>
         </div>

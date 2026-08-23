@@ -16,7 +16,7 @@ export default function Footer() {
             style={{ height: '200px', width: 'auto', objectFit: 'contain', transform: 'scaleX(1.15)', marginBottom: '0.75rem' }}
           />
           <p className="text-gray-400 text-sm mt-3 max-w-xs">
-            A student-led fundraising campaign supporting pancreatic cancer research in partnership with Wellspring Cancer Support London.
+            A student-led fundraising campaign supporting pancreatic cancer patients and families in partnership with Wellspring Cancer Support London.
           </p>
         </div>
 

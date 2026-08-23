@@ -65,7 +65,7 @@ export default function Contact() {
               </h3>
               <div className="w-10 h-1 bg-purple-500 mb-6" />
               <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                We are a group of five high school students from London, Ontario. Reach out to us anytime — we typically respond within 24 hours.
+                We are a group of five high school students from London, Ontario. Reach out to us anytime. We typically respond within 24 hours.
               </p>
               
                 <a href="mailto:purplehope.ca@gmail.com"
