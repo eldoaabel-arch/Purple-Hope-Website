@@ -88,7 +88,7 @@ export default function Navbar() {
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             className="flex items-center gap-2 group"
           >
-            <img src="/images/logo.png" alt="Purple Hope" className="h-15 w-auto object-contain group-hover:scale-105 transition-transform duration-200" />
+            <img src="/images/logo.png" alt="Purple Hope" className="h-12 w-auto object-contain group-hover:scale-85 transition-transform duration-200" />
           </a>
 
           {/* Desktop links */}
